@@ -3,7 +3,6 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const moviesRouter = require("./movies/movies.router");
-const theatersRouter = require("./theaters/theaters.router");
 const notFound = require("./errors/routeNotFound");
 const errorHandler = require("./errors/routeErrorHandler");
 
@@ -12,7 +11,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/movies", moviesRouter);
-app.use("/theaters", theatersRouter);
 
 // route not found and route error handler
 app.use(notFound);
