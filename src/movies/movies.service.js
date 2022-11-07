@@ -1,4 +1,3 @@
-const knexfile = require("../../knexfile");
 const knex = require("../db/connection");
 
 // select from movies: list all movies currently showing, else list all movies
