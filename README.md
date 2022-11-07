@@ -1,5 +1,5 @@
 # Capstone: WeLoveMovies - AP | Thinkful
-### Backend deplyed app on Heroku - https://ap-welovemovies.herokuapp.com/
+### Backend deplyed app on Heroku - https://ap-welovemovies.herokuapp.com/movies
 WeLoveMovies is a Thinkful Backend Development capstone project.
 The frontend experience has been given.
 I have been tasked with setting up a database and building out specific routes so that users can gain access to data about movies, theaters, and reviews.
