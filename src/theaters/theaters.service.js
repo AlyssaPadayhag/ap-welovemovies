@@ -1,6 +1,7 @@
 const knex = require("../db/connection");
 const reduceProperties = require("../utils/reduce-properties");
 
+// helper function to create a movies property - an array of movie objects
 const reduceMovies = reduceProperties("theater_id", {
     movie_id: ["movies", null, "movie_id"],
     title: ["movies", null, "title"],
@@ -14,6 +15,7 @@ const reduceMovies = reduceProperties("theater_id", {
 
 });
 
+// select from theaters, join movie theaters and movies, then add the array of movie objects
 function list() {
     return knex("theaters as t")
         .join("movies_theaters as mt", "mt.theater_id", "t.theater_id")
