@@ -21,6 +21,7 @@ function read(movieId) {
         .first();
 }
 
+// select from movie theaters, join theaters where movie is playing at theater
 function readTheaters(movieId) {
     return knex("movies_theaters as mt")
     .join("theaters as t", "mt.theater_id", "t.theater_id")
@@ -28,6 +29,7 @@ function readTheaters(movieId) {
     .where({ "mt.movie_id": movieId });
 }
 
+// helper service function to create object of critic properties for review
 function readCritic(criticId) {
     return knex("critics")
         .select("*")
@@ -35,6 +37,7 @@ function readCritic(criticId) {
         .first();
 }
 
+// select from reviews where movie_id exists in database
 function readReviews(movieId) {
     return knex("reviews")
         .select("*")
