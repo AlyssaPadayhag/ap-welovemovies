@@ -1,8 +1,8 @@
 const service = require("./reviews.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 
-// UPDATE /reviews/:reviewId
-// DELETE /reviews/:reviewId
+/* validate existing review (paramter review_id === review_id in database)
+   if no Id matches, UPDATE /reviews/:reviewId (incorrect ID), next 404 */
 async function validateReviewId(req, res, next) {
     const { reviewId } = req.params;
     const review = await service.read(reviewId);
@@ -16,6 +16,7 @@ async function validateReviewId(req, res, next) {
     });
 }
 
+// UPDATE /reviews/:reviewId - update an existing review
 async function update(req, res, next) {
     const review = res.locals.review.review_id;
     const updatedReview = {
@@ -26,6 +27,8 @@ async function update(req, res, next) {
     res.json({ data: await service.read(review) });
 }
 
+// DELETE /reviews/:reviewId - delete an existing review
+// send 204 if given Id does not match an existing review
 async function destroy(req, res, next) {
     const { review } = res.locals;
     await service.destroy(review.review_id);
