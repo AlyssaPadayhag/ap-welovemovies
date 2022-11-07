@@ -2,7 +2,7 @@ const router = require("express").Router();
 const controller = require("./movies.controller");
 const methodNotAllowed = require("../errors/methodNotAllowed");
 
-// routes for /movies
+// routes and methods for /movies
 router.route("/:movieId/reviews")
     .get(controller.readReviews)
     .all(methodNotAllowed);
