@@ -18,8 +18,8 @@ I have been tasked with setting up a database and building out specific routes s
 - Create an error handler, where route does not exist
 - Build API following RESTful design principles
 - Create and customize knexfile.js file
-- Creae a connection to database with Knex
-- Write database queries ro complete CRUD routes in an Express server
+- Create a connection to database with Knex
+- Write database queries to complete CRUD routes in an Express server
 - Return joined and nested data with Knex
 - Write database migrations using Knex's migration tools
 
