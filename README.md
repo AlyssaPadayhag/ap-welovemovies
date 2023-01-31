@@ -1,8 +1,38 @@
 # Thinkful Capstone: WeLoveMovies
-### Backend deplyed app on Heroku - https://ap-welovemovies.herokuapp.com/movies
+### Backend deplyed app on Heroku - https://ap-welovemovies-backend.onrender.com/movies
 WeLoveMovies is a Thinkful Backend Development capstone project.
 The frontend experience has been given.
 I have been tasked with setting up a database and building out specific routes so that users can gain access to data about movies, theaters, and reviews.
+
+# Endpoints:
+
+## /movies
+router.route("/:movieId/reviews")
+    .get(controller.readReviews)
+    .all(methodNotAllowed);
+
+router.route("/:movieId/theaters")
+    .get(controller.readTheaters)
+    .all(methodNotAllowed);
+
+router.route("/:movieId")
+    .get(controller.read)
+    .all(methodNotAllowed);
+
+router.route("/")
+    .get(controller.list)
+    .all(methodNotAllowed);
+
+## /theaters
+router.route("/")
+    .get(controller.list)
+    .all(methodNotAllowed);
+    
+## /reviews
+ router.route("/:reviewId")
+    .put(controller.update)
+    .delete(controller.delete)
+    .all(methodNotAllowed);
 
 # Technologies used
 - PostgreSQL
